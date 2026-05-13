@@ -22,6 +22,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"
     integrity="sha384-l8f0VcPi/M1iHPv8egOnY/15TDwqgbOR1anMIJWvU6nLRgZVLTLSaNqi/TOoT5Fh"
     crossorigin="anonymous"></script>
+<style>[x-cloak] { display: none !important; }</style>
 </head>
 <body x-data="checklistApp()" x-init="init()" :class="{ 'dark': darkMode }">
 
@@ -154,7 +155,7 @@
   </header>
 
   <!-- Mode switch banner (replaces confirm() popup) -->
-  <div class="mode-switch-banner" x-show="modeSwitchBanner" x-transition role="alert">
+  <div class="mode-switch-banner" x-cloak x-show="modeSwitchBanner" x-transition role="alert">
     <span>此潛點建議切換至「<strong x-text="modeSwitchBannerLabel"></strong>」模式</span>
     <div class="mode-switch-banner-actions">
       <button class="btn-banner-accept" x-on:click="acceptModeSwitchBanner()">切換</button>
@@ -285,7 +286,7 @@
   </div>
 
   <!-- ===================== RESET MODAL ===================== -->
-  <div class="modal-backdrop" x-show="showResetModal" x-transition x-on:click.self="showResetModal = false" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title">
+  <div class="modal-backdrop" x-cloak x-show="showResetModal" x-transition x-on:click.self="showResetModal = false" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title">
     <div class="modal-box">
       <h2 class="modal-title" id="reset-modal-title">全部重置</h2>
       <p class="modal-body">確定要清除目前模式（<span x-text="mode === 'multi_day' ? '多天住宿' : '當天來回'"></span>）的所有勾選狀態嗎？自訂項目不受影響。</p>
@@ -297,7 +298,7 @@
   </div>
 
   <!-- ===================== NO-FLY MODAL ===================== -->
-  <div class="modal-backdrop" x-show="showNoFlyModal" x-transition x-on:click.self="showNoFlyModal = false" role="dialog" aria-modal="true" aria-labelledby="nofly-modal-title">
+  <div class="modal-backdrop" x-cloak x-show="showNoFlyModal" x-transition x-on:click.self="showNoFlyModal = false" role="dialog" aria-modal="true" aria-labelledby="nofly-modal-title">
     <div class="modal-box modal-box-nofly">
       <div class="modal-header">
         <h2 class="modal-title" id="nofly-modal-title">飛行間隔計算</h2>
@@ -354,7 +355,7 @@
   </div>
 
   <!-- ===================== DESTINATION MODAL ===================== -->
-  <div class="modal-backdrop" x-show="showDestinationModal" x-transition x-on:click.self="showDestinationModal = false" role="dialog" aria-modal="true" aria-labelledby="dest-modal-title">
+  <div class="modal-backdrop" x-cloak x-show="showDestinationModal" x-transition x-on:click.self="showDestinationModal = false" role="dialog" aria-modal="true" aria-labelledby="dest-modal-title">
     <div class="modal-box modal-box-dest">
       <div class="modal-header">
         <h2 class="modal-title" id="dest-modal-title">選擇潛點</h2>
