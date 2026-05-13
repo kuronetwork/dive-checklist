@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "modes": {
+    "multi_day": {
+      "label": "多天住宿",
+      "categories": [
+        {
+          "id": "light_gear",
+          "label": "輕裝",
+          "items": [
+            { "id": "mask", "name": "面鏡" },
+            { "id": "dive_boots", "name": "潛水鞋" },
+            { "id": "wetsuit", "name": "防寒衣 & 褲" },
+            { "id": "gloves", "name": "手套" },
+            { "id": "fins", "name": "蛙鞋" },
+            { "id": "towel_poncho", "name": "毛巾衣" },
+            { "id": "swim_trunks", "name": "泳褲" },
+            { "id": "hood", "name": "潛水帽" },
+            { "id": "rashguard_top", "name": "水母衣" },
+            { "id": "rashguard_bottom", "name": "水母褲" },
+            { "id": "beach_shorts", "name": "海灘褲" }
+          ]
+        },
+        {
+          "id": "heavy_gear",
+          "label": "重裝",
+          "items": [
+            { "id": "bcd", "name": "BCD", "note": "浮力調整裝置" },
+            { "id": "regulator", "name": "調節器" },
+            { "id": "dive_computer", "name": "潛水錶" }
+          ]
+        },
+        {
+          "id": "accessories_docs",
+          "label": "配件 / 文件",
+          "items": [
+            { "id": "cert", "name": "潛水證書（電子 / 實體）", "note": "資格 / 高氧" },
+            { "id": "gear_bag", "name": "裝備袋（船潛袋）" },
+            { "id": "drybag_large", "name": "防水袋（大）" },
+            { "id": "drybag_small", "name": "防水小背包（小）" },
+            { "id": "phone_drybag", "name": "手機防水袋" },
+            { "id": "wetsuit_bag", "name": "防寒衣袋" },
+            { "id": "fin_clip", "name": "蛙鞋扣" },
+            { "id": "ding_stick", "name": "叮叮棒 / 搖鈴" },
+            { "id": "dive_light", "name": "手電筒" },
+            { "id": "dive_knife", "name": "潛水刀" },
+            { "id": "smb", "name": "浮力袋" },
+            { "id": "tracker", "name": "小海豚追蹤定位器" }
+          ]
+        },
+        {
+          "id": "clothing_hygiene",
+          "label": "衣物 / 衛生用品",
+          "items": [
+            { "id": "toothbrush", "name": "牙刷" },
+            { "id": "toothpaste", "name": "牙膏" },
+            { "id": "shampoo", "name": "洗髮精" },
+            { "id": "body_wash", "name": "沐浴乳" },
+            { "id": "face_wash", "name": "洗面乳" },
+            { "id": "clothes", "name": "衣服 / 短褲 / 襪子" },
+            { "id": "swimwear", "name": "泳褲 / 海灘褲" },
+            { "id": "windbreaker", "name": "防風外套" },
+            { "id": "razor", "name": "刮鬍刀" },
+            { "id": "helmet_cap", "name": "帽子（騎車）" },
+            { "id": "shower_towel", "name": "洗澡毛巾 / 塑膠袋" },
+            { "id": "swim_cap", "name": "泳帽", "note": "有溫泉的話" },
+            { "id": "slippers", "name": "拖鞋" }
+          ]
+        },
+        {
+          "id": "medication",
+          "label": "藥物",
+          "items": [
+            { "id": "motion_sickness", "name": "小白兔 / 暈船藥" },
+            { "id": "anti_diarrhea", "name": "拉肚子藥" },
+            { "id": "painkiller", "name": "止痛藥" },
+            { "id": "cold_medicine", "name": "感冒藥" },
+            { "id": "supplements", "name": "健康食品（B 群等）" }
+          ]
+        },
+        {
+          "id": "camera",
+          "label": "相機",
+          "items": [
+            { "id": "insta360", "name": "Insta 360 ACE Pro2 / 配件", "personal": true },
+            { "id": "card_reader", "name": "手機外接讀卡機 / TypeC 手機" },
+            { "id": "check_battery", "name": "檢查電池電力與帶備用電池" },
+            { "id": "check_sd", "name": "檢查 SD 容量與帶備用 SD 卡" },
+            { "id": "typec_cable", "name": "TypeC 充電線" },
+            { "id": "dive_housing", "name": "潛水殼與防霧貼片 / 街拍套件" },
+            { "id": "lens_seal", "name": "鏡頭橡膠圈、相機套" },
+            { "id": "selfie_stick", "name": "自拍桿" },
+            { "id": "adapters", "name": "轉接配件", "note": "1/4 轉接、背包夾、掛繩" },
+            { "id": "safety_lanyard", "name": "失手繩 / QQ 繩" }
+          ]
+        },
+        {
+          "id": "general",
+          "label": "一般用品",
+          "items": [
+            { "id": "water_bottle", "name": "水壺" },
+            { "id": "sunglasses", "name": "墨鏡" },
+            { "id": "raincoat", "name": "雨衣" },
+            { "id": "wallet_id", "name": "錢包 / 身分證 / 健保卡" },
+            { "id": "motorcycle_license", "name": "機車駕照" },
+            { "id": "power_bank", "name": "行動電源 / 長充電線 / 豆腐頭" },
+            { "id": "garmin_cable", "name": "Garmin / Apple Watch 充電線", "personal": true },
+            { "id": "garmin_strap", "name": "Garmin 短 / 長錶帶", "personal": true },
+            { "id": "travel_insurance", "name": "旅平險" },
+            { "id": "folding_hangers", "name": "折疊衣架" }
+          ]
+        }
+      ]
+    },
+    "same_day": {
+      "label": "當天來回",
+      "categories": [
+        {
+          "id": "light_gear",
+          "label": "輕裝",
+          "items": [
+            { "id": "mask", "name": "面鏡" },
+            { "id": "dive_boots", "name": "潛水鞋" },
+            { "id": "wetsuit", "name": "防寒衣 & 褲" },
+            { "id": "gloves", "name": "手套" },
+            { "id": "fins", "name": "蛙鞋" },
+            { "id": "towel_poncho", "name": "毛巾衣" },
+            { "id": "swim_trunks", "name": "泳褲" },
+            { "id": "rashguard_top", "name": "水母衣" },
+            { "id": "rashguard_bottom", "name": "水母褲" },
+            { "id": "beach_shorts", "name": "海灘褲" },
+            { "id": "hood", "name": "潛水帽" },
+            { "id": "dive_computer", "name": "潛水錶" }
+          ]
+        },
+        {
+          "id": "heavy_gear",
+          "label": "重裝",
+          "items": [
+            { "id": "bcd", "name": "BCD", "note": "浮力調整裝置" },
+            { "id": "regulator", "name": "調節器" }
+          ]
+        },
+        {
+          "id": "accessories_docs",
+          "label": "配件 / 文件",
+          "items": [
+            { "id": "cert", "name": "潛水證書（電子 / 實體）", "note": "資格 / 高氧" },
+            { "id": "gear_bag", "name": "裝備袋（船潛袋）" },
+            { "id": "drybag_large", "name": "防水袋（大）" },
+            { "id": "drybag_small", "name": "防水小背包（小）" },
+            { "id": "phone_drybag", "name": "手機防水袋" },
+            { "id": "wetsuit_bag", "name": "防寒衣袋" },
+            { "id": "fin_clip", "name": "蛙鞋扣" },
+            { "id": "ding_stick", "name": "叮叮棒 / 搖鈴" },
+            { "id": "dive_light", "name": "手電筒" },
+            { "id": "dive_knife", "name": "潛水刀" },
+            { "id": "smb", "name": "浮力袋" },
+            { "id": "tracker", "name": "小海豚追蹤定位器" }
+          ]
+        },
+        {
+          "id": "clothing_hygiene",
+          "label": "衣物 / 衛生用品",
+          "items": [
+            { "id": "face_wash", "name": "洗面乳" },
+            { "id": "clothes", "name": "衣服 / 短褲" },
+            { "id": "swimwear", "name": "泳褲 / 海灘褲" },
+            { "id": "windbreaker", "name": "防風外套" },
+            { "id": "helmet_cap", "name": "帽子（騎車）" },
+            { "id": "shower_towel", "name": "洗澡毛巾 / 塑膠袋" },
+            { "id": "slippers", "name": "拖鞋" }
+          ]
+        },
+        {
+          "id": "medication",
+          "label": "藥物",
+          "items": [
+            { "id": "motion_sickness", "name": "暈船藥（短與長效）" },
+            { "id": "anti_diarrhea", "name": "拉肚子藥" },
+            { "id": "painkiller", "name": "止痛藥" },
+            { "id": "cold_medicine", "name": "感冒藥" },
+            { "id": "throat_anti_inflammatory", "name": "喉嚨消炎藥" },
+            { "id": "jellyfish_steroid", "name": "水母（類固醇）藥" }
+          ]
+        },
+        {
+          "id": "camera",
+          "label": "相機",
+          "items": [
+            { "id": "insta360", "name": "Insta 360 ACE Pro2 / 相機", "personal": true },
+            { "id": "check_battery", "name": "檢查電池電力與帶備用電池" },
+            { "id": "check_sd", "name": "檢查 SD 容量與帶備用 SD 卡" },
+            { "id": "typec_cable", "name": "TypeC 充電線" },
+            { "id": "dive_housing", "name": "潛水殼與防霧貼片 / 街拍套件" },
+            { "id": "lens_seal", "name": "鏡頭橡膠圈、相機套" },
+            { "id": "selfie_stick", "name": "自拍桿" },
+            { "id": "adapters", "name": "轉接配件", "note": "1/4 轉接、背包夾、掛繩" },
+            { "id": "safety_lanyard", "name": "失手繩 / QQ 繩" }
+          ]
+        },
+        {
+          "id": "general",
+          "label": "一般用品",
+          "items": [
+            { "id": "water_bottle", "name": "水壺" },
+            { "id": "sunglasses", "name": "墨鏡" },
+            { "id": "umbrella", "name": "雨傘" },
+            { "id": "power_bank", "name": "行動電源 / 長充電線 / 豆腐頭" },
+            { "id": "plastic_bags", "name": "塑膠袋數個", "note": "裝髒衣服跟帶毛巾衣服區潛店放" },
+            { "id": "garmin_strap", "name": "Garmin 短 / 長錶帶", "personal": true },
+            { "id": "wallet_easy_card", "name": "錢包 / 悠遊卡 / 健保卡", "note": "搭車來回可只帶必要證件，貴重物品留店內" }
+          ]
+        }
+      ]
+    }
+  },
+  "international_extras": {
+    "label": "國外加項",
+    "categories": [
+      {
+        "id": "intl_docs",
+        "label": "文件",
+        "items": [
+          { "id": "passport", "name": "護照（有效期 6 個月以上）" },
+          { "id": "visa", "name": "簽證 / ESTA / 落地簽資料" },
+          { "id": "cert_en", "name": "英文版潛水證書" },
+          { "id": "itinerary", "name": "行程列印備份" },
+          { "id": "emergency_contact", "name": "緊急聯絡人資料" }
+        ]
+      },
+      {
+        "id": "intl_insurance",
+        "label": "保險與安全",
+        "items": [
+          { "id": "dan_insurance", "name": "DAN 潛水保險證明" },
+          { "id": "travel_insurance_intl", "name": "旅平險 + 意外險（含潛水條款）" },
+          { "id": "card_insurance", "name": "信用卡保險條款列印" },
+          { "id": "chamber_location", "name": "最近減壓艙位置記錄" },
+          { "id": "dan_hotline", "name": "DAN 24h 緊急電話" }
+        ]
+      },
+      {
+        "id": "intl_travel",
+        "label": "出行配件",
+        "items": [
+          { "id": "eticket", "name": "機票 / 電子機票 QR" },
+          { "id": "universal_adapter", "name": "萬國轉接頭" },
+          { "id": "voltage_converter", "name": "電壓轉換器（如需要）" },
+          { "id": "esim", "name": "當地 SIM / eSIM" },
+          { "id": "cash", "name": "當地貨幣現金" },
+          { "id": "credit_card", "name": "信用卡（含備用卡）" }
+        ]
+      },
+      {
+        "id": "intl_medication",
+        "label": "藥物（國外加項）",
+        "items": [
+          { "id": "prescription_en", "name": "處方箋英文版（如服藥）" },
+          { "id": "motion_sickness_intl", "name": "暈機 / 暈船藥" },
+          { "id": "antibiotics", "name": "廣效抗生素", "note": "建議諮詢醫師後攜帶" },
+          { "id": "chronic_meds_en", "name": "慢性病藥物（英文標籤）" }
+        ]
+      },
+      {
+        "id": "intl_communication",
+        "label": "通訊與當地資訊",
+        "items": [
+          { "id": "translate_app", "name": "翻譯 App 預先離線下載" },
+          { "id": "emergency_phrases", "name": "當地語言緊急用語卡" },
+          { "id": "embassy", "name": "大使館 / 辦事處聯絡資料" }
+        ]
+      }
+    ]
+  }
+}

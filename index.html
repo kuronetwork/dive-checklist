@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="潛水裝備清單 — 國內外潛水旅遊行前準備工具，支援多天住宿與當天來回模式，含飛行間隔計算器與目的地建議。">
+  <meta property="og:title" content="潛水裝備清單 · Dive Checklist">
+  <meta property="og:description" content="國內外潛水旅遊行前準備工具，支援多天住宿與當天來回模式，含飛行間隔計算器。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dive.kuronetwork.me">
+  <title>潛水裝備清單 · Dive Checklist</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- App scripts must load before Alpine.js initializes -->
+  <script src="js/storage.js"></script>
+  <script src="js/nofly.js"></script>
+  <script src="js/app.js"></script>
+  <!-- Alpine.js v3.14.1 — defer ensures it runs after scripts above are parsed -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"
+    integrity="sha384-l8f0VcPi/M1iHPv8egOnY/15TDwqgbOR1anMIJWvU6nLRgZVLTLSaNqi/TOoT5Fh"
+    crossorigin="anonymous"></script>
+</head>
+<body x-data="checklistApp()" x-init="init()" :class="{ 'dark': darkMode }">
+
+  <!-- ===================== EXPLORE DIVING BANNER ===================== -->
+  <a href="https://explorediving.org/" target="_blank" rel="noopener noreferrer" class="explore-diving-banner">
+    <div class="explore-diving-icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M12 3c0 0-4 3.5-4 9s4 9 4 9M12 3c0 0 4 3.5 4 9s-4 9-4 9M3 12h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="explore-diving-text">
+      <span class="explore-diving-name">Explore Diving 探索潛水 雙平台 APP</span>
+      <span class="explore-diving-desc">探索潛水地圖 · 離線優先的潛水嚮導</span>
+    </div>
+    <svg class="explore-diving-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-brand">
+        <h1 class="site-title">Dive Checklist · 旅遊潛水裝備與用品檢查表</h1>
+        <span class="site-subtitle">by <a href="https://explorediving.org/" target="_blank" rel="noopener noreferrer" class="subtitle-link">Kuro</a></span>
+      </div>
+      <div class="header-actions">
+        <!-- Global progress (desktop) -->
+        <div class="global-progress-inline" x-show="!loading && !loadError" aria-live="polite">
+          <span class="progress-text" x-text="`${totalChecked} / ${totalItems}`"></span>
+          <div class="progress-bar-wrap" role="progressbar" :aria-valuenow="progressPercent" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" :style="`width: ${progressPercent}%`"></div>
+          </div>
+        </div>
+        <!-- Mobile controls toggle -->
+        <button class="btn-icon mobile-controls-toggle" :aria-expanded="showMobileControls" aria-label="展開控制選項" x-on:click="showMobileControls = !showMobileControls">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <!-- Dark mode toggle (always visible) -->
+        <button class="btn-icon" x-on:click="toggleDarkMode()" :aria-label="darkMode ? '切換淺色模式' : '切換深色模式'">
+          <svg x-show="!darkMode" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg x-show="darkMode" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Controls panel (slide down on mobile, always visible on desktop) -->
+    <div class="header-controls" :class="{ 'is-open': showMobileControls }">
+      <!-- Mode toggle -->
+      <div class="control-group">
+        <span class="control-label">行程</span>
+        <div class="segmented-toggle" role="group" aria-label="行程模式">
+          <button class="seg-btn" :class="{ active: mode === 'multi_day' }" x-on:click="setMode('multi_day')" aria-pressed="mode === 'multi_day'">多天住宿</button>
+          <button class="seg-btn" :class="{ active: mode === 'same_day' }" x-on:click="setMode('same_day')" aria-pressed="mode === 'same_day'">當天來回</button>
+        </div>
+      </div>
+      <!-- Country toggle -->
+      <div class="control-group">
+        <span class="control-label">地區</span>
+        <div class="segmented-toggle" role="group" aria-label="旅遊地區">
+          <button class="seg-btn" :class="{ active: country === 'domestic' }" x-on:click="setCountry('domestic')" aria-pressed="country === 'domestic'">國內</button>
+          <button class="seg-btn" :class="{ active: country === 'international' }" x-on:click="setCountry('international')" aria-pressed="country === 'international'">國外</button>
+        </div>
+      </div>
+      <!-- Destination picker -->
+      <div class="control-group">
+        <button class="btn-outline" x-on:click="showDestinationModal = true" aria-haspopup="dialog">
+          <span x-text="selectedDestination ? selectedDestination.name : '選擇潛點'"></span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn-ghost btn-small" x-show="selectedDestinationId" x-on:click="clearDestination()" aria-label="清除潛點">清除</button>
+      </div>
+      <!-- No-fly calculator -->
+      <div class="control-group">
+        <button class="btn-outline" x-on:click="showNoFlyModal = true" aria-haspopup="dialog">飛行間隔</button>
+      </div>
+      <!-- Reset -->
+      <div class="control-group">
+        <button class="btn-ghost btn-danger" x-on:click="showResetModal = true" aria-haspopup="dialog">全部重置</button>
+      </div>
+    </div>
+
+    <!-- Destination info panel -->
+    <div class="dest-info-panel" x-show="selectedDestination" x-transition>
+      <template x-if="selectedDestination">
+        <div class="dest-info-inner">
+          <div class="dest-info-row">
+            <span class="dest-info-name" x-text="selectedDestination.name"></span>
+            <span class="dest-info-name-en" x-text="selectedDestination.name_en"></span>
+          </div>
+          <div class="dest-info-facts">
+            <span x-show="destWaterTemp" class="dest-fact">
+              <span class="dest-fact-label">水溫</span>
+              <span x-text="destWaterTemp"></span>
+            </span>
+            <span x-show="selectedDestination.wetsuit_suggestion" class="dest-fact">
+              <span class="dest-fact-label">防寒衣</span>
+              <span x-text="selectedDestination.wetsuit_suggestion"></span>
+            </span>
+            <span x-show="selectedDestination.season_note" class="dest-fact dest-fact-full">
+              <span class="dest-fact-label">季節</span>
+              <span x-text="selectedDestination.season_note"></span>
+            </span>
+            <span x-show="selectedDestination.sea_condition_url" class="dest-fact">
+              <a :href="selectedDestination.sea_condition_url" target="_blank" rel="noopener noreferrer" class="dest-link">海象資訊</a>
+            </span>
+          </div>
+          <!-- International info -->
+          <template x-if="selectedDestination.international">
+            <div class="dest-intl-facts">
+              <span class="dest-fact"><span class="dest-fact-label">航程</span><span x-text="selectedDestination.international.flight_hours_from_tpe"></span></span>
+              <span class="dest-fact"><span class="dest-fact-label">簽證</span><span x-text="selectedDestination.international.visa"></span></span>
+              <span class="dest-fact"><span class="dest-fact-label">電壓</span><span x-text="selectedDestination.international.voltage"></span></span>
+              <span class="dest-fact"><span class="dest-fact-label">貨幣</span><span x-text="selectedDestination.international.currency"></span></span>
+              <span class="dest-fact dest-fact-full"><span class="dest-fact-label">減壓艙</span><span x-text="selectedDestination.international.nearest_chamber"></span></span>
+              <span class="dest-fact"><span class="dest-fact-label">DAN 緊急</span><span x-text="selectedDestination.international.dan_emergency"></span></span>
+            </div>
+          </template>
+        </div>
+      </template>
+    </div>
+  </header>
+
+  <!-- Mode switch banner (replaces confirm() popup) -->
+  <div class="mode-switch-banner" x-show="modeSwitchBanner" x-transition role="alert">
+    <span>此潛點建議切換至「<strong x-text="modeSwitchBannerLabel"></strong>」模式</span>
+    <div class="mode-switch-banner-actions">
+      <button class="btn-banner-accept" x-on:click="acceptModeSwitchBanner()">切換</button>
+      <button class="btn-banner-dismiss" x-on:click="dismissModeSwitchBanner()">保持現狀</button>
+    </div>
+  </div>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main-content" x-show="!loading && !loadError">
+
+    <!-- International extras section -->
+    <section x-show="country === 'international'" x-transition class="intl-section">
+      <div class="section-label">國外加項</div>
+      <div class="categories-grid">
+        <template x-for="cat in internationalCategories" :key="cat.id">
+          <div class="category-card" x-data="{ collapsed: false }">
+            <button class="category-header" x-on:click="collapsed = !collapsed" :aria-expanded="!collapsed">
+              <span class="category-label" x-text="cat.label"></span>
+              <span class="category-badge" x-text="`${categoryChecked(cat.id)} / ${categoryTotal(cat.id)}`" aria-label="已勾選數量"></span>
+              <svg class="collapse-icon" :class="{ rotated: collapsed }" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="category-items" x-show="!collapsed" x-transition>
+              <template x-for="item in cat.items" :key="item.id">
+                <div class="item-row" x-show="isVisible(item)" :class="{ 'item-not-owned': item.owned === false, 'item-checked': isChecked(item.id) }">
+                  <label class="item-label" :for="`intl-${cat.id}-${item.id}`">
+                    <input type="checkbox" class="item-checkbox" :id="`intl-${cat.id}-${item.id}`" :checked="isChecked(item.id)" x-on:change="toggleCheck(item.id)" :aria-label="item.name">
+                    <span class="checkbox-custom" aria-hidden="true"></span>
+                    <span class="item-label-inner">
+                      <span class="item-name">
+                        <span x-show="item.personal" class="personal-star" aria-label="個人裝備">★</span>
+                        <span x-text="item.name"></span>
+                        <span x-show="item._injected" class="dest-tag" x-text="item._destName"></span>
+                        <span x-show="item._custom" class="custom-tag">自訂</span>
+                      </span>
+                      <span x-show="item.note" class="item-note" x-text="item.note"></span>
+                    </span>
+                  </label>
+                  <button x-show="item._custom" class="btn-remove" x-on:click="removeCustomItem(cat.id, item.id)" :aria-label="`刪除 ${item.name}`">×</button>
+                </div>
+              </template>
+              <!-- Add custom item -->
+              <div class="add-item-row">
+                <input type="text" class="add-item-input" :placeholder="`新增項目…`" x-model="customInput[cat.id]" x-on:keydown="handleCustomKeydown($event, cat.id)" :aria-label="`新增項目到 ${cat.label}`">
+                <button class="btn-add" x-on:click="addCustomItem(cat.id)" :aria-label="`新增到 ${cat.label}`">+ 新增</button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- Main categories -->
+    <div class="categories-grid">
+      <template x-for="cat in currentCategories" :key="`${mode}-${cat.id}`">
+        <div class="category-card" x-data="{ collapsed: false }">
+          <button class="category-header" x-on:click="collapsed = !collapsed" :aria-expanded="!collapsed">
+            <span class="category-label" x-text="cat.label"></span>
+            <span class="category-badge" x-text="`${categoryChecked(cat.id)} / ${categoryTotal(cat.id)}`" aria-label="已勾選數量"></span>
+            <svg class="collapse-icon" :class="{ rotated: collapsed }" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="category-items" x-show="!collapsed" x-transition>
+            <template x-for="item in cat.items" :key="item.id">
+              <div class="item-row" x-show="isVisible(item)" :class="{ 'item-not-owned': item.owned === false, 'item-checked': isChecked(item.id) }">
+                <label class="item-label" :for="`${mode}-${cat.id}-${item.id}`">
+                  <input type="checkbox" class="item-checkbox" :id="`${mode}-${cat.id}-${item.id}`" :checked="isChecked(item.id)" x-on:change="toggleCheck(item.id)" :aria-label="item.name">
+                  <span class="checkbox-custom" aria-hidden="true"></span>
+                  <span class="item-label-inner">
+                    <span class="item-name">
+                      <span x-show="item.personal" class="personal-star" aria-label="個人裝備">★</span>
+                      <span x-text="item.name"></span>
+                      <span x-show="item._injected" class="dest-tag" x-text="item._destName"></span>
+                      <span x-show="item._custom" class="custom-tag">自訂</span>
+                    </span>
+                    <span x-show="item.note" class="item-note" x-text="item.note"></span>
+                  </span>
+                </label>
+                <button x-show="item._custom" class="btn-remove" x-on:click="removeCustomItem(cat.id, item.id)" :aria-label="`刪除 ${item.name}`">×</button>
+              </div>
+            </template>
+            <!-- Add custom item -->
+            <div class="add-item-row">
+              <input type="text" class="add-item-input" placeholder="新增項目…" x-model="customInput[cat.id]" x-on:keydown="handleCustomKeydown($event, cat.id)" :aria-label="`新增項目到 ${cat.label}`">
+              <button class="btn-add" x-on:click="addCustomItem(cat.id)" :aria-label="`新增到 ${cat.label}`">+ 新增</button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </main>
+
+  <!-- Loading state -->
+  <div class="loading-state" x-show="loading" aria-live="polite">
+    <span>載入中…</span>
+  </div>
+
+  <!-- Error state -->
+  <div class="error-state" x-show="loadError" role="alert">
+    <p>無法載入裝備清單資料，請重新整理頁面。</p>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <p class="footer-privacy">100% client-side · no tracking · no cookies · data stays in your browser.</p>
+    <p class="footer-links">
+      <a href="https://github.com/kuronetwork/dive-checklist" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-sep">·</span>
+      <span>MIT License (code) · CC BY 4.0 (content)</span>
+      <span class="footer-sep">·</span>
+      <a href="https://explorediving.org/" target="_blank" rel="noopener noreferrer">by Kuro</a>
+    </p>
+  </footer>
+
+  <!-- ===================== STICKY BOTTOM BAR (mobile) ===================== -->
+  <div class="sticky-bar" x-show="!loading && !loadError" aria-label="全域進度">
+    <div class="sticky-progress">
+      <span class="sticky-progress-text" x-text="`${totalChecked} / ${totalItems} · ${progressPercent}%`" aria-live="polite"></span>
+      <div class="progress-bar-wrap sticky-progress-bar" role="progressbar" :aria-valuenow="progressPercent" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar-fill" :style="`width: ${progressPercent}%`"></div>
+      </div>
+    </div>
+    <button class="btn-hide-checked" :class="{ active: hideChecked }" x-on:click="toggleHideChecked()" :aria-pressed="hideChecked">
+      <span x-text="hideChecked ? '顯示全部' : '隱藏已勾選'"></span>
+    </button>
+  </div>
+
+  <!-- ===================== RESET MODAL ===================== -->
+  <div class="modal-backdrop" x-show="showResetModal" x-transition x-on:click.self="showResetModal = false" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title">
+    <div class="modal-box">
+      <h2 class="modal-title" id="reset-modal-title">全部重置</h2>
+      <p class="modal-body">確定要清除目前模式（<span x-text="mode === 'multi_day' ? '多天住宿' : '當天來回'"></span>）的所有勾選狀態嗎？自訂項目不受影響。</p>
+      <div class="modal-actions">
+        <button class="btn-outline" x-on:click="showResetModal = false">取消</button>
+        <button class="btn-danger" x-on:click="resetChecks()">確認重置</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NO-FLY MODAL ===================== -->
+  <div class="modal-backdrop" x-show="showNoFlyModal" x-transition x-on:click.self="showNoFlyModal = false" role="dialog" aria-modal="true" aria-labelledby="nofly-modal-title">
+    <div class="modal-box modal-box-nofly">
+      <div class="modal-header">
+        <h2 class="modal-title" id="nofly-modal-title">飛行間隔計算</h2>
+        <button class="btn-icon" x-on:click="showNoFlyModal = false" aria-label="關閉">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="nofly-inputs">
+        <div class="form-group">
+          <label class="form-label" for="last-dive-input">最後一潛結束時間</label>
+          <input type="datetime-local" id="last-dive-input" class="form-input" x-model="nofly.lastDive" x-on:change="computeNoFly()">
+        </div>
+        <div class="form-group">
+          <span class="form-label">潛水類型</span>
+          <div class="radio-group" role="radiogroup" aria-label="潛水類型">
+            <label class="radio-label">
+              <input type="radio" name="dive-type" value="single_nodecomp" x-model="nofly.diveType" x-on:change="computeNoFly()">
+              <span>單次無減壓</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="dive-type" value="multi_day" x-model="nofly.diveType" x-on:change="computeNoFly()">
+              <span>多次或多日（預設）</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="dive-type" value="decompression" x-model="nofly.diveType" x-on:change="computeNoFly()">
+              <span>有減壓潛水</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="nofly-results" x-show="noflyResults">
+        <div class="nofly-row" :class="{ 'nofly-recommended': recommendedHours === 12 }">
+          <span class="nofly-label">單次無減壓 +12h</span>
+          <span class="nofly-time" x-text="noflyResults?.h12 || '—'"></span>
+        </div>
+        <div class="nofly-row" :class="{ 'nofly-recommended': recommendedHours === 18 }">
+          <span class="nofly-label">多次 / 多日 +18h</span>
+          <span class="nofly-time" x-text="noflyResults?.h18 || '—'"></span>
+        </div>
+        <div class="nofly-row nofly-dan" :class="{ 'nofly-recommended': recommendedHours === 24 }">
+          <span class="nofly-label">DAN 保守建議 +24h</span>
+          <span class="nofly-time" x-text="noflyResults?.h24 || '—'"></span>
+        </div>
+        <div class="nofly-decompression-note" x-show="nofly.diveType === 'decompression'">
+          有減壓潛水建議至少等待 24 小時，並請諮詢醫師或潛水教練。
+        </div>
+        <div class="nofly-countdown" x-show="countdownText" aria-live="polite" x-text="countdownText"></div>
+      </div>
+
+      <p class="nofly-disclaimer">本計算依 DAN 一般建議；個人狀況、減壓潛水、特殊體質請以醫師或潛水教練判斷為準。This tool is not medical advice.</p>
+    </div>
+  </div>
+
+  <!-- ===================== DESTINATION MODAL ===================== -->
+  <div class="modal-backdrop" x-show="showDestinationModal" x-transition x-on:click.self="showDestinationModal = false" role="dialog" aria-modal="true" aria-labelledby="dest-modal-title">
+    <div class="modal-box modal-box-dest">
+      <div class="modal-header">
+        <h2 class="modal-title" id="dest-modal-title">選擇潛點</h2>
+        <button class="btn-icon" x-on:click="showDestinationModal = false" aria-label="關閉">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="dest-list">
+        <div class="dest-group-label">國內</div>
+        <template x-for="dest in domesticDestinations" :key="dest.id">
+          <button class="dest-option" :class="{ selected: selectedDestinationId === dest.id }" x-on:click="selectDestination(dest.id)">
+            <span class="dest-option-name" x-text="dest.name"></span>
+            <span class="dest-option-en" x-text="dest.name_en"></span>
+          </button>
+        </template>
+        <div class="dest-group-label">國外</div>
+        <template x-for="dest in internationalDestinations" :key="dest.id">
+          <button class="dest-option" :class="{ selected: selectedDestinationId === dest.id }" x-on:click="selectDestination(dest.id)">
+            <span class="dest-option-name" x-text="dest.name"></span>
+            <span class="dest-option-en" x-text="dest.name_en"></span>
+          </button>
+        </template>
+        <button class="dest-option dest-option-clear" x-show="selectedDestinationId" x-on:click="clearDestination(); showDestinationModal = false">
+          清除潛點選擇
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

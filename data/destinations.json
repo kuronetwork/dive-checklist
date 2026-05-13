@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "destinations": [
+    {
+      "id": "green-island",
+      "name": "綠島",
+      "name_en": "Green Island",
+      "region": "domestic",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "summer": "26–29°C",
+        "winter": "22–24°C"
+      },
+      "wetsuit_suggestion": "夏季 3mm 全身防寒衣 / 冬季 5mm 全身防寒衣",
+      "season_note": "4–10月為最佳潛水季節，能見度可達20–30m。夏季水溫舒適，海況平穩。11月至翌年3月受東北季風影響，浪況較大，部分潛點可能關閉。",
+      "sea_condition_url": "https://www.cwa.gov.tw/V8/C/M/OBS_Marine_30day.html",
+      "extra_items": [
+        { "category": "general", "name": "機車駕照（島上交通必備）" }
+      ],
+      "international": null
+    },
+    {
+      "id": "kenting",
+      "name": "墾丁",
+      "name_en": "Kenting",
+      "region": "domestic",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "summer": "27–29°C",
+        "winter": "22–24°C"
+      },
+      "wetsuit_suggestion": "夏季 3mm 全身防寒衣 / 冬季 5mm 全身防寒衣",
+      "season_note": "全年皆可潛水，4–10月海況最佳，能見度15–25m。夏季水溫高、海況穩定，適合初學者。冬季受東北季風影響，東側海域浪大，建議選擇西側潛點（如後壁湖）。",
+      "sea_condition_url": "https://www.cwa.gov.tw/V8/C/M/OBS_Marine_30day.html",
+      "extra_items": [],
+      "international": null
+    },
+    {
+      "id": "xiaoliuqiu",
+      "name": "小琉球",
+      "name_en": "Xiaoliuqiu",
+      "region": "domestic",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "summer": "26–28°C",
+        "winter": "22–24°C"
+      },
+      "wetsuit_suggestion": "夏季 3mm 全身防寒衣 / 冬季 5mm 全身防寒衣",
+      "season_note": "全年皆可潛水，以觀賞海龜聞名。4–10月海況最佳，能見度10–20m。冬季東北季風期間浪況較大，但仍有許多受保護的潛點可供選擇。",
+      "sea_condition_url": "https://www.cwa.gov.tw/V8/C/M/OBS_Marine_30day.html",
+      "extra_items": [],
+      "international": null
+    },
+    {
+      "id": "northeast-coast",
+      "name": "東北角",
+      "name_en": "Northeast Coast",
+      "region": "domestic",
+      "recommended_mode": "same_day",
+      "water_temp": {
+        "summer": "24–27°C",
+        "winter": "18–22°C"
+      },
+      "wetsuit_suggestion": "夏季 3mm 全身防寒衣 / 冬季 7mm 全身防寒衣或乾式潛水衣",
+      "season_note": "5–9月為最佳潛水季節，能見度5–15m。冬季水溫偏低，受東北季風影響浪況不穩，建議選擇龍洞、和平島等有遮蔽的潛點。適合岸潛，交通便利。",
+      "sea_condition_url": "https://www.cwa.gov.tw/V8/C/M/OBS_Marine_30day.html",
+      "extra_items": [],
+      "international": null
+    },
+    {
+      "id": "bohol",
+      "name": "薄荷島",
+      "name_en": "Bohol",
+      "region": "international",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "year_round": "26–29°C"
+      },
+      "wetsuit_suggestion": "3mm 全身防寒衣或短版防寒衣（全年適用）",
+      "season_note": "全年皆可潛水，3–5月為乾季最佳時期，能見度可達20–30m。以阿洛納海灘（Alona Beach）為潛水基地，附近有豐富的珊瑚礁與多樣海洋生物。6–11月偶有颱風，需注意天氣。",
+      "sea_condition_url": null,
+      "extra_items": [
+        { "category": "general", "name": "防蚊液（戶外活動必備）" }
+      ],
+      "international": {
+        "flight_hours_from_tpe": "約2.5–3小時（台北→宿霧，再轉船或飛機至薄荷島）",
+        "visa": "免簽證，ROC護照可停留30天",
+        "voltage": "220V / A、B型插座（建議攜帶萬用轉接頭）",
+        "currency": "菲律賓披索（PHP）",
+        "dan_emergency": "+1-919-684-9111（DAN全球24小時緊急熱線）",
+        "nearest_chamber": "宿霧市 Vicente Sotto Memorial Medical Center 高壓氧治療中心（距薄荷島約2小時船程）"
+      }
+    },
+    {
+      "id": "similan",
+      "name": "斯米蘭群島",
+      "name_en": "Similan Islands",
+      "region": "international",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "year_round": "27–30°C"
+      },
+      "wetsuit_suggestion": "3mm 全身防寒衣或短版防寒衣（全年適用）",
+      "season_note": "每年10月底至翌年5月開放，6–10月因季風關閉。最佳季節為12月至翌年4月，能見度可達20–40m，海況平穩。以豐富的珊瑚礁、大型魚群及鯨鯊聞名，適合各程度潛水員。",
+      "sea_condition_url": null,
+      "extra_items": [
+        { "category": "general", "name": "防蚊液（陸地活動必備）" }
+      ],
+      "international": {
+        "flight_hours_from_tpe": "約3.5–4小時（台北→普吉島，再轉船約2–3小時至斯米蘭）",
+        "visa": "免簽證，ROC護照可停留30天（落地簽或電子簽證）",
+        "voltage": "220V / A、B、C型插座（建議攜帶萬用轉接頭）",
+        "currency": "泰銖（THB）",
+        "dan_emergency": "+1-919-684-9111（DAN全球24小時緊急熱線）",
+        "nearest_chamber": "普吉島 Bangkok Hospital Phuket 高壓氧治療中心（距斯米蘭約2–3小時船程）"
+      }
+    },
+    {
+      "id": "palau",
+      "name": "帛琉",
+      "name_en": "Palau",
+      "region": "international",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "year_round": "27–30°C"
+      },
+      "wetsuit_suggestion": "3mm 全身防寒衣（全年適用，強流潛點建議5mm）",
+      "season_note": "全年皆可潛水，10月至翌年4月為乾季，海況最穩定，能見度可達30–60m。以Blue Corner強流潛水、水母湖（Jellyfish Lake）及豐富的二戰沉船聞名。建議具備進階潛水員資格。",
+      "sea_condition_url": null,
+      "extra_items": [
+        { "category": "accessories_docs", "name": "Reef hook（強流必備）" }
+      ],
+      "international": {
+        "flight_hours_from_tpe": "約4小時（台北→帛琉，中華航空/長榮航空直飛）",
+        "visa": "落地免簽，ROC護照可停留30天",
+        "voltage": "120V / A、B型插座（美規，與台灣相同）",
+        "currency": "美元（USD）",
+        "dan_emergency": "+1-919-684-9111（DAN全球24小時緊急熱線）",
+        "nearest_chamber": "Belau National Hospital 高壓氧治療中心，科羅爾（Koror），帛琉"
+      }
+    },
+    {
+      "id": "maldives",
+      "name": "馬爾地夫",
+      "name_en": "Maldives",
+      "region": "international",
+      "recommended_mode": "multi_day",
+      "water_temp": {
+        "year_round": "28–30°C"
+      },
+      "wetsuit_suggestion": "3mm 全身防寒衣或短版防寒衣（全年適用）",
+      "season_note": "全年皆可潛水，12月至翌年4月為東北季風季（乾季），能見度最佳可達30–40m，海況平穩。5–11月為西南季風季（雨季），浪況較大但仍可潛水，部分環礁能見度較低。以鯨鯊、鬼蝠魟及豐富珊瑚礁聞名。",
+      "sea_condition_url": null,
+      "extra_items": [
+        { "category": "general", "name": "防曬衣（長時間船潛必備）" },
+        { "category": "accessories_docs", "name": "水下攝影設備（珊瑚礁景觀豐富）" }
+      ],
+      "international": {
+        "flight_hours_from_tpe": "約8–10小時（台北→馬累，通常需經新加坡、吉隆坡或杜拜轉機）",
+        "visa": "落地免簽，ROC護照可停留30天",
+        "voltage": "230V / D、G、J、K、L型插座（建議攜帶萬用轉接頭）",
+        "currency": "馬爾地夫盧非亞（MVR），美元廣泛接受",
+        "dan_emergency": "+1-919-684-9111（DAN全球24小時緊急熱線）",
+        "nearest_chamber": "ADK Hospital（馬累）高壓氧治療中心，或 Bandos Island Resort 高壓氧艙（距馬累約30分鐘快艇）"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+# ===================== NODE =====================
+node_modules/
+
+# ===================== EDITORS =====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===================== OS =====================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.directory
+
+# ===================== SECRETS & CREDENTIALS =====================
+# Keep these even for a static site — safety net if project evolves
+.env
+.env.local
+.env.*.local
+*.env
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+*.secret
+*.credentials
+
+# ===================== LOGS & TEMP =====================
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.class
+*.pyc
+
+# ===================== BUILD OUTPUT =====================
+/build/
+/coverage/
+/dist/
+
+# ===================== KIRO IDE =====================
+.kiro/specs/*/tasks.md.backup
+.kiro/specs/*
+.kiro/
+.agent/
+.agents/
+
+# ===================== OTHER TOOLS =====================
+.cursor/rules/snyk_rules.mdc
+.history
+.svn/
+.atom/
+.build/
+.buildlog/
+
+# ===================== DEV / TEST FILES =====================
+tests/
+run-property*.js
+*.test.js
+CHANGELOG.md
+FIX-SUMMARY.md
+VERIFICATION-CHECKLIST.md
+DEPLOYMENT-GUIDE.md
+test-overflow-fix.html
