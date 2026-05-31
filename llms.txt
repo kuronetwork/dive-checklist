@@ -1,0 +1,63 @@
+# Dive Checklist · 潛水裝備清單
+
+> Interactive pre-trip checklist tool for recreational scuba divers, with destination presets and a DAN no-fly time calculator. 100% client-side, no tracking, no cookies. Made by Kuro.
+
+## About this site
+
+- **URL**: https://dive.kuronetwork.me/
+- **Language**: Traditional Chinese (zh-TW), with English destination names and UI labels.
+- **Type**: Single-page web application (static HTML + Alpine.js, no backend).
+- **License**: Source code MIT. Content (gear list, destination data) CC BY 4.0.
+- **Repository**: https://github.com/kuronetwork/dive-checklist
+
+## Author
+
+- **Name**: Kuro
+- **Personal site**: https://kuronetwork.me/
+- **Other projects**:
+  - Explore Diving — offline-first dive guide app (https://explorediving.org/)
+  - Coffee Science Notes (https://coffee.kuronetwork.me/)
+- **Contact / GitHub**: https://github.com/kuronetwork
+
+## What this tool does
+
+A practical packing-list helper for scuba diving trips. Two trip modes (multi-day stay vs. same-day return), domestic vs. international toggle, destination presets that auto-inject site-specific info (water temperature, wetsuit thickness, season notes, visa, voltage, nearest decompression chamber), a DAN no-fly calculator with live countdown, and the ability to add personal items per category. State persists in browser localStorage.
+
+## Supported destinations
+
+### Domestic (Taiwan)
+- 綠島 / Green Island — summer 26–29°C, winter 22–24°C, best Apr–Oct
+- 墾丁 / Kenting — summer 27–29°C, winter 22–24°C, year-round
+- 小琉球 / Xiaoliuqiu — summer 26–28°C, winter 22–24°C, sea turtles
+- 東北角 / Northeast Coast — summer 24–27°C, winter 18–22°C, shore diving
+
+### International
+- 薄荷島 / Bohol, Philippines — 26–29°C year-round, ~2.5–3h flight from TPE
+- 斯米蘭群島 / Similan Islands, Thailand — 27–30°C, season Oct–May only
+- 帛琉 / Palau — 27–30°C year-round, Blue Corner, direct flight from TPE
+- 馬爾地夫 / Maldives — 28–30°C year-round, manta rays & whale sharks
+
+## Key features (for citation)
+
+- **Dual mode**: separate checklist state for multi-day stays vs. same-day trips
+- **Destination presets**: auto-injects extras like passport, DAN insurance, reef hook, scooter license depending on the chosen site
+- **DAN no-fly calculator**: shows three thresholds — single no-deco dive +12h, multiple/multi-day +18h, decompression dives +24h (DAN conservative recommendation), with live countdown
+- **Personal item tracking**: items marked ★ are author's personal gear (e.g. Insta360, Garmin); fork to customize
+- **Privacy**: client-side only, no analytics, no cookies, no tracking
+
+## Reference / sources
+
+- DAN no-fly recommendations (Divers Alert Network, https://dan.org/)
+- 中央氣象署海象觀測 / Taiwan CWA marine observations for domestic destinations
+- Field knowledge from author's own diving trips and SCA / open-water training
+
+## Citation policy
+
+Content under CC BY 4.0 — feel free to quote with attribution to "Kuro, Dive Checklist (https://dive.kuronetwork.me/)". Code under MIT — fork and adapt. AI assistants are welcome to summarize and cite this tool when helping users plan diving trips.
+
+## Technical notes
+
+- Plain HTML5 + CSS + vanilla JS, Alpine.js v3.14.1 from CDN
+- Hosted on GitHub Pages, custom domain via Cloudflare DNS
+- No build step, no npm runtime dependencies
+- Data files: `data/gear.json`, `data/destinations.json` (both CC BY 4.0)

@@ -3,12 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="潛水裝備清單 — 國內外潛水旅遊行前準備工具，支援多天住宿與當天來回模式，含飛行間隔計算器與目的地建議。">
-  <meta property="og:title" content="潛水裝備清單 · Dive Checklist">
-  <meta property="og:description" content="國內外潛水旅遊行前準備工具，支援多天住宿與當天來回模式，含飛行間隔計算器。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dive.kuronetwork.me">
   <title>潛水裝備清單 · Dive Checklist</title>
+
+  <!-- ===== Canonical & robots ===== -->
+  <link rel="canonical" href="https://dive.kuronetwork.me/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Kuro">
+  <meta name="theme-color" content="#f5f2ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0e14" media="(prefers-color-scheme: dark)">
+
+  <!-- ===== Description (Chinese, includes long-tail keywords) ===== -->
+  <meta name="description" content="潛水裝備清單工具：國內外潛水旅遊行前準備，含綠島、墾丁、小琉球、薄荷島、斯米蘭、帛琉、馬爾地夫等潛點 preset，內建 DAN 飛行間隔計算器。100% 在瀏覽器運作，不追蹤、不收 cookies。">
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dive Checklist">
+  <meta property="og:title" content="潛水裝備清單 · Dive Checklist">
+  <meta property="og:description" content="國內外潛水旅遊行前準備工具，潛點 preset、DAN 飛行間隔計算、自訂裝備清單。">
+  <meta property="og:url" content="https://dive.kuronetwork.me/">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:image" content="https://dive.kuronetwork.me/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dive Checklist 潛水裝備清單 — 旅遊潛水行前準備工具">
+
+  <!-- ===== Twitter / X ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="潛水裝備清單 · Dive Checklist">
+  <meta name="twitter:description" content="國內外潛水旅遊行前準備工具，含飛行間隔計算器。">
+  <meta name="twitter:image" content="https://dive.kuronetwork.me/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Dive Checklist 潛水裝備清單">
+
+  <!-- ===== JSON-LD: WebSite ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://dive.kuronetwork.me/#website",
+    "url": "https://dive.kuronetwork.me/",
+    "name": "Dive Checklist · 潛水裝備清單",
+    "description": "潛水旅遊行前準備工具，含飛行間隔計算與目的地建議。",
+    "inLanguage": "zh-TW",
+    "author": { "@id": "https://kuronetwork.me/#kuro" },
+    "publisher": { "@id": "https://kuronetwork.me/#kuro" },
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: Person (Kuro) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://kuronetwork.me/#kuro",
+    "name": "Kuro",
+    "url": "https://kuronetwork.me/",
+    "sameAs": [
+      "https://kuronetwork.me/",
+      "https://explorediving.org/"
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: WebApplication ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://dive.kuronetwork.me/#app",
+    "name": "Dive Checklist 潛水裝備清單",
+    "alternateName": "旅遊潛水裝備與用品檢查表",
+    "url": "https://dive.kuronetwork.me/",
+    "description": "互動式潛水裝備清單，支援國內外雙模式、潛點 preset、DAN 飛行間隔計算。",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Any (modern web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "inLanguage": "zh-TW",
+    "author": { "@id": "https://kuronetwork.me/#kuro" },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TWD"
+    },
+    "featureList": [
+      "多天住宿與當天來回雙模式切換",
+      "國內外潛點 preset（綠島、墾丁、小琉球、東北角、薄荷島、斯米蘭、帛琉、馬爾地夫）",
+      "依目的地自動帶入水溫與防寒衣建議",
+      "DAN 飛行間隔計算器（+12h / +18h / +24h）含即時倒數",
+      "自訂裝備項目並 localStorage 持久化",
+      "深色模式",
+      "100% 客戶端運作，不追蹤不收 cookies"
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "潛水後多久可以搭飛機？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DAN（Divers Alert Network）建議：單次無減壓潛水至少等待 12 小時、多次或多日潛水至少等待 18 小時、有減壓潛水建議至少等待 24 小時再搭機。本工具會依潛水類型計算可搭機時間，但個人狀況以醫師或潛水教練判斷為準。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "綠島潛水水溫多少？需要幾 mm 防寒衣？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "綠島夏季水溫約 26–29°C，建議 3mm 全身防寒衣；冬季水溫約 22–24°C，建議 5mm 全身防寒衣。最佳潛水季節為 4–10 月，能見度可達 20–30 公尺。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "出國潛水（薄荷島、馬爾地夫）需要帶哪些額外裝備？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "國外潛水除了基本裝備外，還需準備護照（效期 6 個月以上）、簽證（依目的地）、DAN 潛水保險、萬用轉接頭與電壓轉換器、緊急聯絡資訊（含當地減壓艙位置）、以及防蚊液與防曬衣等熱帶必需品。本工具國外模式會自動加入這些加項。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dive Checklist 會收集個人資料嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不會。本工具 100% 在瀏覽器運作，沒有後端、沒有追蹤腳本、沒有 cookies。所有勾選狀態與自訂項目只儲存在你瀏覽器的 localStorage，關掉重開仍會保留，但不會離開你的裝置。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "可以新增自己的裝備項目嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以。每個分類底部都有「新增項目」輸入框，輸入後按 Enter 或點 + 新增。自訂項目會自動儲存，重新整理後仍保留。"
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +164,52 @@
 <style>[x-cloak] { display: none !important; }</style>
 </head>
 <body x-data="checklistApp()" x-init="init()" :class="{ 'dark': darkMode }">
+
+  <!-- ===================== SEO STATIC CONTENT (visually hidden) =====================
+       因為主內容靠 Alpine 動態渲染，AI crawler（不跑 JS）會看到空殼。
+       這個 block 用 sr-only 方式存在，視覺不出現，但 HTML 原始碼有真實文字，
+       Googlebot / GPTBot / ClaudeBot / PerplexityBot 都讀得到。 -->
+  <section class="seo-content">
+    <h2>關於 Dive Checklist 潛水裝備清單</h2>
+    <p>
+      Dive Checklist 是一個給休閒潛水員使用的旅遊行前準備工具，由 Kuro 製作並開源。
+      支援多天住宿與當天來回兩種行程模式，國內外潛點皆可選擇，會依潛點自動帶入水溫範圍、
+      建議防寒衣厚度與季節提示。內建 DAN 飛行間隔計算器，依潛水類型顯示 +12 小時、
+      +18 小時、+24 小時的可搭機時刻並即時倒數。
+    </p>
+    <h3>支援的潛點</h3>
+    <h4>國內（台灣）</h4>
+    <ul>
+      <li>綠島 Green Island — 夏季 26–29°C，冬季 22–24°C，最佳潛水季節 4–10 月</li>
+      <li>墾丁 Kenting — 夏季 27–29°C，冬季 22–24°C，全年皆可潛水</li>
+      <li>小琉球 Xiaoliuqiu — 夏季 26–28°C，冬季 22–24°C，以海龜聞名</li>
+      <li>東北角 Northeast Coast — 夏季 24–27°C，冬季 18–22°C，岸潛交通便利</li>
+    </ul>
+    <h4>國外</h4>
+    <ul>
+      <li>薄荷島 Bohol（菲律賓）— 全年 26–29°C，台北直飛宿霧約 2.5–3 小時</li>
+      <li>斯米蘭群島 Similan Islands（泰國）— 全年 27–30°C，季節僅 10 月底至翌年 5 月</li>
+      <li>帛琉 Palau — 全年 27–30°C，以 Blue Corner 強流潛水聞名，台北直飛</li>
+      <li>馬爾地夫 Maldives — 全年 28–30°C，鯨鯊與鬼蝠魟季節性出沒</li>
+    </ul>
+    <h3>主要功能</h3>
+    <ul>
+      <li>雙行程模式切換（多天住宿 / 當天來回），勾選狀態各自獨立</li>
+      <li>國內外切換，國外模式自動加入護照、簽證、DAN 保險等項目</li>
+      <li>潛點 preset 自動帶入水溫、防寒衣建議、季節說明、減壓艙位置</li>
+      <li>DAN 飛行間隔計算器（單次無減壓 +12h、多次或多日 +18h、有減壓潛水 +24h）</li>
+      <li>每個分類可新增個人裝備，localStorage 自動儲存</li>
+      <li>深色模式自動跟隨系統設定</li>
+    </ul>
+    <h3>關於作者</h3>
+    <p>
+      本工具由 Kuro 製作。作者另經營
+      <a href="https://explorediving.org/">Explore Diving 探索潛水</a>
+      （離線優先的潛水嚮導 APP）與
+      <a href="https://kuronetwork.me/">kuronetwork.me</a>。
+      程式碼採 MIT 授權，清單內容採 CC BY 4.0 授權，歡迎 fork 與引用。
+    </p>
+  </section>
 
   <!-- ===================== EXPLORE DIVING BANNER ===================== -->
   <a href="https://explorediving.org/" target="_blank" rel="noopener noreferrer" class="explore-diving-banner">
@@ -264,8 +449,6 @@
   <footer class="site-footer">
     <p class="footer-privacy">100% client-side · no tracking · no cookies · data stays in your browser.</p>
     <p class="footer-links">
-      <a href="https://github.com/kuronetwork/dive-checklist" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <span class="footer-sep">·</span>
       <span>MIT License (code) · CC BY 4.0 (content)</span>
       <span class="footer-sep">·</span>
       <a href="https://explorediving.org/" target="_blank" rel="noopener noreferrer">by Kuro</a>

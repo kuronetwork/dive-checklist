@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- ============ DIVE CHECKLIST · OG IMAGE 1200x630 ============ -->
+  <!-- Palette mirrors the site's editorial-utility look:
+       bg #f5f2ee  text #0d1b2a  accent #c9614a  border #d4cfc9 -->
+
+  <defs>
+    <!-- Subtle paper grain via vertical gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#f7f4ef"/>
+      <stop offset="1"   stop-color="#efe9e1"/>
+    </linearGradient>
+
+    <!-- Deep ocean gradient for the right-side wave illustration -->
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#1a3a52"/>
+      <stop offset="1"   stop-color="#0d1b2a"/>
+    </linearGradient>
+
+    <!-- Light wave crest -->
+    <linearGradient id="crest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#c9614a" stop-opacity="0.85"/>
+      <stop offset="1"   stop-color="#c9614a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== Background ===== -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Hairline frame, 24px inset -->
+  <rect x="24" y="24" width="1152" height="582" fill="none"
+        stroke="#d4cfc9" stroke-width="1"/>
+
+  <!-- ===== Right-side ocean panel (≈ 38% width) ===== -->
+  <g>
+    <rect x="744" y="24" width="432" height="582" fill="url(#ocean)"/>
+
+    <!-- Wave layers, drawn as smooth curves -->
+    <path d="M744,440 C 830,400 920,470 1010,430 C 1090,395 1140,440 1176,420 L 1176,606 L 744,606 Z"
+          fill="#0d1b2a" opacity="0.55"/>
+    <path d="M744,490 C 830,460 920,520 1010,485 C 1090,455 1140,495 1176,475 L 1176,606 L 744,606 Z"
+          fill="#0d1b2a" opacity="0.7"/>
+    <path d="M744,540 C 830,520 920,565 1010,540 C 1090,520 1140,545 1176,535 L 1176,606 L 744,606 Z"
+          fill="#0d1b2a" opacity="0.85"/>
+
+    <!-- Single accent crest -->
+    <path d="M744,438 C 830,398 920,468 1010,428 C 1090,393 1140,438 1176,418"
+          fill="none" stroke="url(#crest)" stroke-width="2"/>
+
+    <!-- Diver-down flag (accent) -->
+    <g transform="translate(900, 140)">
+      <rect x="0" y="0" width="120" height="80" fill="#c9614a"/>
+      <line x1="-4" y1="-4" x2="124" y2="84" stroke="#f7f4ef" stroke-width="14"/>
+    </g>
+
+    <!-- Compass / dive computer mark (small, top-right of panel) -->
+    <g transform="translate(1080, 90)" stroke="#f7f4ef" stroke-width="1.5" fill="none" opacity="0.55">
+      <circle cx="0" cy="0" r="34"/>
+      <circle cx="0" cy="0" r="24"/>
+      <line x1="0" y1="-34" x2="0" y2="-26"/>
+      <line x1="0" y1="34"  x2="0" y2="26"/>
+      <line x1="-34" y1="0" x2="-26" y2="0"/>
+      <line x1="34"  y1="0" x2="26"  y2="0"/>
+      <path d="M0,-18 L4,2 L0,8 L-4,2 Z" fill="#c9614a" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- ===== Left text block ===== -->
+  <!-- Eyebrow / site name -->
+  <g font-family="'DM Sans', 'Noto Sans TC', sans-serif">
+    <text x="80" y="118" font-size="20" letter-spacing="6"
+          fill="#6b6560" font-weight="500">
+      DIVE CHECKLIST
+    </text>
+    <line x1="80" y1="138" x2="200" y2="138" stroke="#c9614a" stroke-width="2"/>
+  </g>
+
+  <!-- Main headline, serif -->
+  <g font-family="'DM Serif Display', 'Noto Serif TC', Georgia, serif" fill="#0d1b2a">
+    <text x="80" y="240" font-size="84" font-weight="400">旅遊潛水</text>
+    <text x="80" y="334" font-size="84" font-weight="400">裝備清單</text>
+  </g>
+
+  <!-- English sub-headline -->
+  <g font-family="'DM Serif Display', Georgia, serif" fill="#0d1b2a" opacity="0.9">
+    <text x="80" y="396" font-size="32" font-style="italic">
+      Pre-trip checklist for divers
+    </text>
+  </g>
+
+  <!-- Feature bullets -->
+  <g font-family="'DM Sans', 'Noto Sans TC', sans-serif"
+     fill="#0d1b2a" font-size="20">
+    <g transform="translate(80, 460)">
+      <circle cx="6" cy="-6" r="3" fill="#c9614a"/>
+      <text x="22" y="0">多天住宿 / 當天來回 雙模式</text>
+    </g>
+    <g transform="translate(80, 494)">
+      <circle cx="6" cy="-6" r="3" fill="#c9614a"/>
+      <text x="22" y="0">國內外潛點 preset · 自動帶入水溫與防寒衣</text>
+    </g>
+    <g transform="translate(80, 528)">
+      <circle cx="6" cy="-6" r="3" fill="#c9614a"/>
+      <text x="22" y="0">DAN 飛行間隔計算器 · 即時倒數</text>
+    </g>
+  </g>
+
+  <!-- Footer line -->
+  <g font-family="'DM Sans', sans-serif" fill="#6b6560">
+    <text x="80" y="582" font-size="16" letter-spacing="1.5">
+      dive.kuronetwork.me
+    </text>
+    <text x="664" y="582" font-size="16" letter-spacing="1.5" text-anchor="end">
+      by Kuro · 100% client-side · no tracking
+    </text>
+  </g>
+</svg>
