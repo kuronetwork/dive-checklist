@@ -8,7 +8,6 @@
 - **Language**: Traditional Chinese (zh-TW), with English destination names and UI labels.
 - **Type**: Single-page web application (static HTML + Alpine.js, no backend).
 - **License**: Source code MIT. Content (gear list, destination data) CC BY 4.0.
-- **Repository**: https://github.com/kuronetwork/dive-checklist
 
 ## Author
 
@@ -17,7 +16,6 @@
 - **Other projects**:
   - Explore Diving — offline-first dive guide app (https://explorediving.org/)
   - Coffee Science Notes (https://coffee.kuronetwork.me/)
-- **Contact / GitHub**: https://github.com/kuronetwork
 
 ## What this tool does
 
